@@ -6,7 +6,7 @@ import seaborn as sns
 
 ### Global variables
 global fileName
-fileName = 'data.csv'
+fileName = 'data/data.csv'
 global tag
 tag = ' $ - '
 
@@ -19,19 +19,66 @@ def main():
     """
 
     ## Reads the data and makes sure it is actually loaded
-    data = pd.read_csv('data.csv')
+    data = pd.read_csv(fileName)
     print(data.head())
+    
+    ## Cleans the data, drops the other value in race
+    data = data[data["Race"] != "other"]
 
     ## describes the data
-    print(tag, data.describe())
+    ## Gets age and victem information
+    dataInfo(data)
+    
+    ## Make box and whisker plot for outlers
+    checkOutliers(data)
+    
+    ## Calls a function to start graphing/plotting the data
+    graphData(data)
+    
+    ## Calls a function to start modeling the data
+    modelData(data)
+    
+    
+def checkOutliers(data):
+    """
+    Graphs the data to check for outliers
+    :param data: the data that is being graphed
+    :return: None
+    """
+    sns.boxplot(x=data["Age"])
+    sns.boxplot(x=data["Victim Count"])
+    
+def dataInfo(data):
+    print(data.describe())
 
-    ## plots the data
-    sns.pairplot(data, hue='species')
+def graphData(data):
+    """
+    Graphs the data
+    :param data: the data that is being graphed
+    :return: None
+    """
+    
+    ## Plots the data for the first Question
+    sns.countplot(x='Sex', data=data)
+
+    ## Plots the data for the second Question
+    sns.histplot(x='Race', data=data)
+    
+    ## Plots the data for the fourth Question
+    sns.histplot(x='Method', data=data)
+    
+    ## Additional graphing just to explore the data
+    X = data['Age']
+    y = data['Victim Count']
+    plt.scatter(X, y)
     plt.show()
-
-    ## prepares the data for training and analysis
-    X = data.drop(['species'], axis=1)
-    y = data['species']
+    
+def modelData(data):
+    """
+    Graphs the data to make the model
+    :param data: the data that is being graphed
+    :return: None
+    """
 
 ### Runs the main function
 if __name__ == '__main__':
