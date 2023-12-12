@@ -22,5 +22,5 @@ A repo containing the code/resources/frameworks used in making CSCI 410 (Introdu
 ## Authors
 
 - [@Christopher Mata](https://github.com/Christopher-Mata)
-- [@Brandon Moffit](https://github.com/DividesZero)
+- [@Brandon Moffit](https://github.com/Xgamer427)
 
