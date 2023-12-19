@@ -1,6 +1,8 @@
 # CSCI-410
 
-A repo containing the code/resources/frameworks used in making CSCI 410 (Introduction to datascience) final project.
+A repo containing the code/resources/frameworks used to make the final project of the CSCI 410 (Introduction to Datascience).
+It also contains files for HW and class examples
+
 ## Tech Stack
 
 **Language:** Python
@@ -13,10 +15,10 @@ A repo containing the code/resources/frameworks used in making CSCI 410 (Introdu
 ## Roadmap
 
 -   Choose DataSet
--   Clean and analyse DataSet
--   Make a accurate model
--   Report findings in Abstract for NCUR
--   Make Presenation and submit to Canvas
+-   Clean and analyze DataSet
+-   Make an accurate model
+-   Report findings in the Abstract for NCUR
+-   Make Presentation and submit it to Canvas
 
 
 ## Authors
